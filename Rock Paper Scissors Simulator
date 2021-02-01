@@ -1,0 +1,21 @@
+import random
+
+choices = ["rock", "paper", "scissors"]
+
+play_On = "y"
+
+while play_On == "y":
+    answer = input("Rock, Paper or Scissor: ")
+    answer = answer.lower()
+    random_Num = random.randint(0,2)
+    print("You chose " + answer + " and I have...")
+    temp = choices[random_Num]
+    print(temp.upper())
+
+    if answer == temp:
+        print("It's a draw!")
+    if (answer == "rock" and temp == "scissors") or (answer == "scissors" and temp == "paper") or (answer == "paper" and temp == "rock"):
+        print("You win!")
+    if (answer == "scissors" and temp == "rock") or (answer == "paper" and temp == "scissors") or (answer == "rock" and temp == "paper"):
+        print("You lose!")
+
