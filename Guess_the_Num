@@ -1,0 +1,13 @@
+import random
+
+guess = -1
+x = int(input("How high do you want to guess to, starting at 0: "))
+answer = random.randint(0,x)
+while guess != answer:
+    guess = int(input("Guess the number: "))
+    if guess < answer:
+        print("To low: ")
+    elif guess > answer:
+        print("To high: ")
+print("You got it!")
+
