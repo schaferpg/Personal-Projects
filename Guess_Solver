@@ -1,0 +1,19 @@
+import random
+lower_limit = int(input("How low do you wanna go?"))
+upper_limit = int(input("How high do you wanna go?"))
+answer = random.randint(lower_limit,upper_limit)
+
+
+
+def guesser(lower_limit, upper_limit, answer):
+    guess = (lower_limit + upper_limit) // 2
+    if guess == answer:
+        return ("You got it!" + str(guess))
+    elif guess < answer:
+        print("To low, you guessed " + str(guess))
+        return guesser(guess, upper_limit, answer)
+    else:
+        print("To high, you guessed " + str(guess))
+        return guesser(lower_limit, guess, answer)
+    
+print(guesser(lower_limit, upper_limit, answer))
